@@ -28,7 +28,7 @@ data_files = list_files("data/14.04 (15 минут, 5 точек в секунд
 df = pd.concat((pd.read_parquet(f) for f in data_files))
 
 df.dropna()
-X = df.drop('fault_type', axis=1).drop('fault_active', axis=1).drop('fault_time', axis=1).drop('sim_id', axis=1)
+X = df.drop('fault_type', axis=1).drop('fault_active', axis=1).drop('fault_time', axis=1).drop('sim_id', axis=1).drop('real_V', axis=1).drop('real_K', axis=1).drop('real_Vy', axis=1).drop('real_w', axis=1).drop('u_V_real', axis=1).drop('u_K_real', axis=1)   
 y = df['fault_type']
 X.info()
 
